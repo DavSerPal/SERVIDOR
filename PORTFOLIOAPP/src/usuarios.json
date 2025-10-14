@@ -1,0 +1,26 @@
+[   
+    {
+        "correo": "prueba@gmail.com",
+        "passwd": "12345"
+    },
+    {
+        "correo": "usuario1@example.com",
+        "passwd": "clave123"
+    },
+    {
+        "correo": "usuario2@example.com",
+        "passwd": "test456"
+    },
+    {
+        "correo": "usuario3@example.com",
+        "passwd": "demo789"
+    },
+    {
+        "correo": "usuario4@example.com",
+        "passwd": "password"
+    },
+    {
+        "correo": "usuario5@example.com",
+        "passwd": "12345abc"
+    }
+]

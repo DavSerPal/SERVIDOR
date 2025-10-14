@@ -1,4 +1,5 @@
 <?php
+
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -38,6 +39,40 @@ function ver_productos($page,$prod_por_pag){
 
     return [$prod_inicio, $prod_fin];
 }
+
+function comprobar_datos($valor){
+    include("datos.php");
+    foreach ($usuarios as $usuario) {
+        if ($_POST["correo"] == $usuario["correo"] && $_POST["passwd"] == $usuario["passwd"] ){
+            return true;
+        }
+    }
+}
+
+function comp_form(){
+    $error_form="";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["correo"]) || empty($_POST["passwd"])) {
+            $error_form = "Por favor, introduzca los datos";
+            return $error_form;
+        } else 
+            $login_correcto = comprobar_datos($_POST[$valor]);
+    }
+    if ($login_correcto){
+        include("datos.php");
+        $loggedIn = TRUE;
+        # realizar el login real
+        $_SESSION["correo"] = $_POST["correo"];
+        $_SESSION["passwd"] = $_POST["passwd"];
+        setcookie("user_email",$_SESSION["correo"]);
+        header("Location: contacto_lista.php");
+        exit;
+    } else {
+        return "ERROR: El correo o contraseña son incorrectos";
+    }
+}
+
 
 
 $delete = isset($_GET['delete']) ? $_GET['delete']: false;

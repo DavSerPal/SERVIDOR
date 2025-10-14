@@ -1,6 +1,3 @@
-
-<!-- DAVID SERRANO PALAZÓN -->
-
 <?php include("templates/header.php"); ?>
 <?php include_once("datos.php") ?>
 

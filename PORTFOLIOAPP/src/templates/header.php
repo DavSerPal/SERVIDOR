@@ -1,6 +1,4 @@
-
-<!-- DAVID SERRANO PALAZÓN -->
-
+<?php session_start(); ?>
 <html lang="es">
 <head>
     <title>Portfolio de proyectos</title>
@@ -38,8 +36,8 @@
         <ul class="nav nav-pills">
             <?php
             # Comprueba si el usuario está logeado como admin, para mostrar el link a la zona "privada"
-            if ($loggedIn == TRUE) {
-                print('<li class="nav-item"><a href="admin.php" class="nav-link ' . (($_SERVER['SCRIPT_NAME'] == '/admin.php') ? 'active' : '') . '">ADMINISTRADOR</a></li>');
+            if ($_COOKIE["user_email"]) {
+                print('<li class="nav-item"><a href="contacto_lista.php" class="nav-link ' . (($_SERVER['SCRIPT_NAME'] == '/contacto_lista.php') ? 'active' : '') . '">ADMINISTRADOR</a></li>');
             }
             ?>
             <!-- Boton Menú INICIO -->
@@ -61,7 +59,14 @@
             <!-- Boton Menú CONTACTO -->
             <li class="nav-item"><a href="contacto.php" class="nav-link <?php if($_SERVER['SCRIPT_NAME']=='/contacto.php') {print("active");}?>">CONTACTO</a></li>
             <!-- Boton Menú INICIAR SESION -->
-            <li class="nav-item"><a href="log_in.php" class="nav-link <?php if($_SERVER['SCRIPT_NAME']=='/log_in.php') {print("active");}?>">INICIAR SESIÓN</a></li>
+            <?php
+            if ($_COOKIE["user_email"]) {
+                print('<li class="nav-item"><a href="log_in.php" class="nav-link <?php if($_SERVER["SCRIPT_NAME"]=="/log_in.php") {print("active");}?>LOG OUT</a></li>');
+            } else {
+                print('<li class="nav-item"><a href="log_in.php" class="nav-link <?php if($_SERVER["SCRIPT_NAME"]=="/log_in.php") {print("active");}?>LOG IN</a></li>');
+            }
+            ?>
+            
         
         </ul>
     </header>
