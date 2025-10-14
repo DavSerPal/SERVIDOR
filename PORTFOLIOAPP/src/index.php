@@ -6,13 +6,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+    padding: 50px;
   }
 </style>
 
 <div class="body-index">
   <div class="div_boton">
     <a class= "btn btn-primary btn-lg py-5 px-5" href="productos.php">Ver Productos</a>
+  </div>
+  <div class="div_boton">
+    <a class= "btn btn-primary btn-lg py-5 px-5" href="crear_productos.php">Crear Productos</a>
   </div>
 </div>
 
