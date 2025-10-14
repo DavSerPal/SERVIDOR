@@ -61,7 +61,7 @@
             <!-- Boton Menú INICIAR SESION -->
             <?php
             if ($_COOKIE["user_email"]) {
-                print('<li class="nav-item"><a href="log_in.php" class="nav-link <?php if($_SERVER["SCRIPT_NAME"]=="/log_in.php") {print("active");}?>LOG OUT</a></li>');
+                print('<li class="nav-item"><a href="log_out.php" class="nav-link {print("active");}?>LOG OUT</a></li>');
             } else {
                 print('<li class="nav-item"><a href="log_in.php" class="nav-link <?php if($_SERVER["SCRIPT_NAME"]=="/log_in.php") {print("active");}?>LOG IN</a></li>');
             }
