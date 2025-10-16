@@ -68,8 +68,10 @@ function comp_form(){
         setcookie("user_email",$_SESSION["correo"]);
         header("Location: contacto_lista.php");
         exit;
+    } elseif (empty($_POST["correo"]) || empty($_POST["passwd"])) {
+        return "";
     } else {
-        return "ERROR: El correo o contraseña son incorrectos";
+        return "Error: El correo o la contraseña son incorrectos";
     }
 }
 

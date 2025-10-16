@@ -13,7 +13,7 @@
             <label for="passwd_login" class="form-label">Contraseña: </label>
             <input type="password" name="passwd" class="form-control" id="passwd_login" value="<?php $_POST["passwd"] ?>">
         </div>
-        <span class='text-danger'><?php print(comp_form()) ?></span>
+        <span class='text-danger'><?php print(comp_form()) ?></span><br>
         <?php ob_end_flush(); ?>
         <br>
         <button type="submit" class="btn btn-success">Enviar</button>

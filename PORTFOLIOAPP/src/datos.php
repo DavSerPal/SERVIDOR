@@ -27,9 +27,9 @@
     ];
 
     // 1. Leer los ficheros JSON
-    $json1 = file_get_contents("productos1.json");
-    $json2 = file_get_contents("productos2.json");
-    $json3 = file_get_contents("usuarios.json");
+    $json1 = file_get_contents("data/productos1.json");
+    $json2 = file_get_contents("data/productos2.json");
+    $json3 = file_get_contents("data/usuarios.json");
     
     // 2. Pasar a arrays asociativos
     $array1 = json_decode($json1, true);
